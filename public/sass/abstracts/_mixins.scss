@@ -3,9 +3,7 @@
     $ai: stretch,
     $fdr: row,
     $flshort: (
-        0,
-        1,
-        auto,
+        0 1 auto,
     )
 ) {
     display: flex;

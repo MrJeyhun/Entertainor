@@ -1,6 +1,14 @@
+//reset css
+@import './abstracts/reset';
+
+//abstracts
 @import './abstracts/functions';
 @import './abstracts/mixins';
 @import './abstracts/variables';
+@import './abstracts/animations';
 
 //components
 @import './components/header';
+
+//pages
+@import './pages/home';

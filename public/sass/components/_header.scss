@@ -12,8 +12,9 @@
             padding: pxToRem(5px) 0 pxToRem(5px) pxToRem(10px);
             font-family: 'Modak', cursive;
             font-style: normal;
-            font-size: pxToRem(24px);
+            font-size: pxToRem(30px);
             line-height: pxToRem(29px);
+            letter-spacing: pxToRem(1px);
             color: $color-purple;
         }
     }
