@@ -1,0 +1,16 @@
+@mixin flex( $jc: flex-start, $ai: stretch, $fdr: row, $flshort: (0, 1, auto )) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fdr;
+    flex: $flshort;
+}
+
+@mixin shadow-generator($color) {
+    box-shadow: 0 pxToRem(4px) pxToRem(20px) $color;
+}
+
+@mixin border-generator($color) {
+    -moz-box-shadow: pxToRem(1px) solid $color;
+    border: pxToRem(1px) solid $color;
+}
