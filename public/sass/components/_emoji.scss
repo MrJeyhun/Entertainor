@@ -1,0 +1,94 @@
+.emoji {
+    width: 120px;
+    height: 120px;
+    margin: 15px 15px 40px;
+    background: #9b59b6;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        bottom: -40px;
+        font-size: 18px;
+        width: 60px;
+        left: calc(50% - 30px);
+    }
+
+    &__face,
+    &__eyebrows,
+    &__eyes,
+    &__mouth {
+        position: absolute;
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+        }
+    }
+
+    &__face {
+        width: inherit;
+        height: inherit;
+        animation: wow-face 3s linear infinite;
+    }
+
+    &__eyebrows {
+        left: calc(50% - 3px);
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background: transparent;
+        box-shadow: -18px 0 0 0 $color-black, -33px 0 0 0 $color-black, 18px 0 0 0 $color-black, 33px 0 0 0 $color-black;
+        animation: wow-brow 3s linear infinite;
+    }
+}
+
+.emoji--wow {
+    &:after {
+        content: '';
+    .emoji__eyebrows {
+        &:before,
+        &:after {
+            width: 24px;
+            height: 20px;
+            border: 6px solid $color-black;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            top: -3px;
+            left: calc(50% - 12px);
+        }
+
+        &:before {
+            margin-left: -25px;
+        }
+
+        &:after {
+            margin-left: 25px;
+        }
+    }
+
+    .emoji__eyes {
+        width: 16px;
+        height: 24px;
+        left: calc(50% - 8px);
+        top: 35px;
+        border-radius: 50%;
+        background: transparent;
+        box-shadow: 25px 0 0 0 $color-black, -25px 0 0 0 $color-black;
+    }
+
+    .emoji__mouth {
+        width: 30px;
+        height: 45px;
+        left: calc(50% - 15px);
+        top: 50%;
+        border-radius: 50%;
+        background: $color-black;
+        animation: wow-mouth 3s linear infinite;
+    }
+}
