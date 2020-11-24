@@ -1,10 +1,71 @@
-.app {
+.homepage {
     &__body {
         width: 100%;
         height: 92vh;
+        @include flex($jc: center, $ai: center, $fdr: column);
         background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)),
             url('../images/background.jpg');
         background-size: contain;
         animation: body-animate 3s ease;
+        color: $color-purple;
+        font-family: 'Lato', sans-serif;
+    }
+
+    &__info {
+        text-align: center;
+        margin-bottom: 30px;
+        &__title {
+            font-size: pxToRem(56px);
+            font-weight: bold;
+        }
+        &__description {
+            font-size: pxToRem(32px);
+            font-weight: bold;
+        }
+    }
+
+    &__find-event {
+        width: pxToRem(200px);
+        padding: pxToRem(20px);
+        text-align: center;
+        font-size: pxToRem(20px);
+        border-radius: pxToRem(4px);
+        background-color: $color-purple;
+        border: none;
+        transition: all 0.5s ease;
+
+        a {
+            color: $color-white;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: all 0.5s ease;
+            text-decoration: none;
+
+            &:after {
+                content: '»';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: pxToRem(-20px);
+                transition: all 0.5s ease;
+            }
+
+            &:link {
+                text-decoration: inherit;
+            }
+            &:visited {
+                text-decoration: inherit;
+            }
+        }
+
+        &:hover a {
+            padding-right: pxToRem(25px);
+
+            &:after {
+                opacity: 1;
+                right: 0;
+            }
+        }
     }
 }
