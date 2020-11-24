@@ -2,6 +2,5 @@
 @import './abstracts/mixins';
 @import './abstracts/variables';
 
-body {
-    background-color: aqua;
-} 
+//components
+@import './components/header';
