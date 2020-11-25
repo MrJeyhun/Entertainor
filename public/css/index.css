@@ -1,2 +1,634 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
 body {
-  background-color: aqua; }
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a,
+a:hover,
+a:link {
+  text-decoration: none; }
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+  *:focus {
+    outline: 0 !important; }
+
+@-moz-keyframes body-animate {
+  10% {
+    transform: scale(1, 0.002); }
+  35% {
+    transform: scale(0.2, 0.002);
+    opacity: 1; }
+  50% {
+    transform: scale(0.2, 0.002);
+    opacity: 0; }
+  85% {
+    transform: scale(1, 0.002);
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1); } }
+
+@-webkit-keyframes body-animate {
+  10% {
+    transform: scale(1, 0.002); }
+  35% {
+    transform: scale(0.2, 0.002);
+    opacity: 1; }
+  50% {
+    transform: scale(0.2, 0.002);
+    opacity: 0; }
+  85% {
+    transform: scale(1, 0.002);
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1); } }
+
+@-o-keyframes body-animate {
+  10% {
+    transform: scale(1, 0.002); }
+  35% {
+    transform: scale(0.2, 0.002);
+    opacity: 1; }
+  50% {
+    transform: scale(0.2, 0.002);
+    opacity: 0; }
+  85% {
+    transform: scale(1, 0.002);
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1); } }
+
+@keyframes body-animate-center {
+  10% {
+    transform: scale(1, 0.002); }
+  35% {
+    transform: scale(0.2, 0.002);
+    opacity: 1; }
+  50% {
+    transform: scale(0.2, 0.002);
+    opacity: 0; }
+  85% {
+    transform: scale(1, 0.002);
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1); } }
+
+@keyframes body-animation-right-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes countdown-modal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes wow-face {
+  15%,
+  25% {
+    transform: rotate(20deg) translateX(-25px); }
+  45%,
+  65% {
+    transform: rotate(-20deg) translateX(25px); }
+  75%,
+  100% {
+    transform: rotate(0deg) translateX(0); } }
+
+@keyframes wow-brow {
+  15%,
+  65% {
+    top: 25px; }
+  75%,
+  100%,
+  0% {
+    top: 15px; } }
+
+@keyframes wow-mouth {
+  10%,
+  30% {
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 10px); }
+  50%,
+  70% {
+    width: 30px;
+    height: 40px;
+    left: calc(50% - 15px); }
+  75%,
+  100% {
+    height: 50px; } }
+
+.body-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 92vh;
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)), url("../images/background.jpg");
+  background-size: contain; }
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+  flex: 0 1 auto;
+  background-color: #fff;
+  width: 100%;
+  height: 8vh;
+  border-bottom: 0.0625rem solid lightgray; }
+  .header__brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: 0 1 auto;
+    width: 100%;
+    padding: 0.3125rem 0 0.3125rem 0.625rem;
+    font-family: 'Modak', cursive;
+    font-style: normal;
+    font-size: 1.875rem;
+    line-height: 1.8125rem;
+    letter-spacing: 0.0625rem;
+    color: #9b59b6; }
+
+.emoji {
+  width: 120px;
+  height: 120px;
+  margin: 15px 15px 40px;
+  background: #9b59b6;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative; }
+  .emoji:after {
+    position: absolute;
+    bottom: -40px;
+    font-size: 18px;
+    width: 60px;
+    left: calc(50% - 30px); }
+  .emoji__face, .emoji__eyebrows, .emoji__eyes, .emoji__mouth {
+    position: absolute; }
+    .emoji__face:before, .emoji__face:after, .emoji__eyebrows:before, .emoji__eyebrows:after, .emoji__eyes:before, .emoji__eyes:after, .emoji__mouth:before, .emoji__mouth:after {
+      position: absolute;
+      content: ''; }
+  .emoji__face {
+    width: inherit;
+    height: inherit;
+    animation: wow-face 3s linear infinite; }
+  .emoji__mouth {
+    width: 30px;
+    height: 45px;
+    left: calc(50% - 15px);
+    top: 50%;
+    border-radius: 50%;
+    background: #000;
+    animation: wow-mouth 3s linear infinite; }
+  .emoji__eyes {
+    width: 16px;
+    height: 24px;
+    left: calc(50% - 8px);
+    top: 35px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000; }
+  .emoji__eyebrows {
+    left: calc(50% - 3px);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
+    animation: wow-brow 3s linear infinite; }
+    .emoji__eyebrows:before, .emoji__eyebrows:after {
+      width: 24px;
+      height: 20px;
+      border: 6px solid #000;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      top: -3px;
+      left: calc(50% - 12px); }
+    .emoji__eyebrows:before {
+      margin-left: -25px; }
+    .emoji__eyebrows:after {
+      margin-left: 25px; }
+  .emoji:after {
+    content: ''; }
+
+.eventspage__events__event-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex: 0 1 auto;
+  border-radius: 0.125rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  height: 7.8125rem;
+  margin: 1.5625rem auto;
+  width: 40.625rem;
+  transition: all 0.3s ease-out; }
+  .eventspage__events__event-card:hover {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2); }
+  .eventspage__events__event-card:hover .eventspage__events__event-card__info-section__loc-and-price {
+    opacity: 0;
+    transform: translateY(-8px); }
+  .eventspage__events__event-card:hover .eventspage__events__event-card__info-section__hover-section {
+    opacity: 1;
+    transform: translateY(10px); }
+  .eventspage__events__event-card__cover {
+    background: none;
+    height: 100%;
+    width: 35%;
+    position: relative; }
+    .eventspage__events__event-card__cover__image {
+      background-image: url("https://s9.postimg.cc/y0sfm95gv/prince_f.jpg");
+      background-position: center center;
+      background-size: cover;
+      height: 100%; }
+  .eventspage__events__event-card__info-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    flex: 0 1 auto;
+    background-color: #fff;
+    height: 100%;
+    padding: 0.75rem 0.9375rem;
+    position: relative;
+    width: 65%; }
+    .eventspage__events__event-card__info-section__date, .eventspage__events__event-card__info-section__loc-and-price, .eventspage__events__event-card__info-section__hover-section {
+      font-size: 0.875rem;
+      color: #888; }
+    .eventspage__events__event-card__info-section__description {
+      margin-top: 0.625rem; }
+    .eventspage__events__event-card__info-section__hover-section {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 300ms ease-out; }
+      .eventspage__events__event-card__info-section__hover-section__get-ticket {
+        padding: 5px;
+        color: #fff;
+        background-color: #9b59b6;
+        border: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-radius: 0.1875rem;
+        outline: none;
+        user-select: none; }
+        .eventspage__events__event-card__info-section__hover-section__get-ticket:hover {
+          background-color: #8e44ad; }
+    .eventspage__events__event-card__info-section .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-direction: row;
+      flex: 0 1 auto;
+      padding: 0.75rem;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      transition: all 300ms ease-out;
+      width: 100%; }
+
+.eventspage__countdown-modal-overlay {
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+
+.eventspage__countdown-modal {
+  display: none;
+  border-top-right-radius: 0.875rem;
+  border-top-left-radius: 0.875rem;
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)), url("../images/countdownbg.jpg");
+  background-size: contain;
+  width: 50rem;
+  height: 85%;
+  z-index: 20;
+  user-select: none;
+  animation: countdown-modal 1s ease; }
+  .eventspage__countdown-modal__warnings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 1 auto;
+    margin-top: 5rem; }
+    .eventspage__countdown-modal__warnings--large {
+      font-family: 'Modak', cursive;
+      font-size: 3.75rem;
+      letter-spacing: 0.0625rem;
+      color: #9b59b6; }
+    .eventspage__countdown-modal__warnings--small {
+      font-size: 1.25rem;
+      color: #9b59b6; }
+  .eventspage__countdown-modal__countdown {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 5rem; }
+    .eventspage__countdown-modal__countdown div {
+      position: relative;
+      width: 6.25rem;
+      height: 6.25rem;
+      line-height: 6.25rem;
+      text-align: center;
+      background: #9b59b6;
+      color: #fff;
+      margin: 0 0.9375rem;
+      font-size: 3rem;
+      font-weight: 500; }
+      .eventspage__countdown-modal__countdown div:before {
+        content: '';
+        position: absolute;
+        bottom: -1.875rem;
+        left: 0;
+        width: 100%;
+        height: 2.1875rem;
+        background: #ffce00;
+        color: #333;
+        font-size: 1rem;
+        line-height: 2.1875rem;
+        font-weight: 300; }
+    .eventspage__countdown-modal__countdown div#day:before {
+      content: 'Days'; }
+    .eventspage__countdown-modal__countdown div#hour:before {
+      content: 'Hours'; }
+    .eventspage__countdown-modal__countdown div#minute:before {
+      content: 'Minutes'; }
+    .eventspage__countdown-modal__countdown div#second:before {
+      content: 'Seconds'; }
+  .eventspage__countdown-modal__btn {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 2.5rem;
+    margin-top: 6.25rem; }
+    .eventspage__countdown-modal__btn__buy-ticket {
+      padding: 13px 25px;
+      color: #fff;
+      background-color: #9b59b6;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 0.1875rem;
+      outline: none;
+      user-select: none;
+      font-size: 1.25rem; }
+      .eventspage__countdown-modal__btn__buy-ticket:hover {
+        background-color: #8e44ad; }
+
+.homepage__body {
+  color: #9b59b6;
+  font-family: 'Lato', sans-serif;
+  animation: body-animate-center 2s ease; }
+
+.homepage__info {
+  text-align: center;
+  margin-bottom: 30px; }
+  .homepage__info__title {
+    font-size: 3.5rem;
+    font-weight: bold; }
+  .homepage__info__description {
+    font-size: 2rem;
+    font-weight: bold; }
+
+.homepage__find-event {
+  width: 12.5rem;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  background-color: #9b59b6;
+  border: none;
+  transition: all 0.5s ease; }
+  .homepage__find-event a {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s ease;
+    text-decoration: none; }
+    .homepage__find-event a:after {
+      content: '»';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -1.25rem;
+      transition: all 0.5s ease; }
+    .homepage__find-event a:link {
+      text-decoration: inherit; }
+    .homepage__find-event a:visited {
+      text-decoration: inherit; }
+  .homepage__find-event:hover a {
+    padding-right: 1.5625rem; }
+    .homepage__find-event:hover a:after {
+      opacity: 1;
+      right: 0; }
+
+.eventspage {
+  font-family: 'Poppins', sans-serif; }
+  .eventspage__body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    animation: body-animation-right-to-left 2s ease; }
+  .eventspage__container {
+    background-color: rgba(236, 240, 241, 0.9);
+    width: 62.5rem;
+    height: 100%;
+    overflow-y: hidden; }
+  .eventspage__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 3.125rem; }
+    .eventspage__form__search-input {
+      padding-left: 1rem;
+      margin-top: 0.0625rem;
+      height: 2.5rem;
+      width: 15rem;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      border: none; }
+      .eventspage__form__search-input ::placeholder {
+        color: #e4e6e8; }
+      .eventspage__form__search-input:focus {
+        outline: 0;
+        box-shadow: 0 0.25rem 1.25rem #9b59b6; }
+    .eventspage__form__search-button {
+      padding: 12px;
+      color: #fff;
+      background-color: #9b59b6;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 0.1875rem;
+      outline: none;
+      user-select: none; }
+      .eventspage__form__search-button:hover {
+        background-color: #8e44ad; }
+  .eventspage__events {
+    height: 100%;
+    margin-top: 3.75rem;
+    overflow-y: auto;
+    scrollbar-color: #9b59b6 #fff;
+    scrollbar-width: thin; }
+    .eventspage__events::-webkit-scrollbar {
+      width: 0.5rem;
+      background-color: #fff; }
+    .eventspage__events::-webkit-scrollbar-thumb {
+      background-color: #9b59b6; }
+    .eventspage__events__sec1 {
+      height: 3.125rem; }
+    .eventspage__events__sec2 {
+      height: 1.5625rem; }

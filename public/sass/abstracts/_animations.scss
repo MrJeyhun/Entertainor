@@ -1,0 +1,171 @@
+//body animation
+@-moz-keyframes body-animate {
+    10% {
+        transform: scale(1, 0.002);
+    }
+
+    35% {
+        transform: scale(0.2, 0.002);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.2, 0.002);
+        opacity: 0;
+    }
+
+    85% {
+        transform: scale(1, 0.002);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@-webkit-keyframes body-animate {
+    10% {
+        transform: scale(1, 0.002);
+    }
+
+    35% {
+        transform: scale(0.2, 0.002);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.2, 0.002);
+        opacity: 0;
+    }
+
+    85% {
+        transform: scale(1, 0.002);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@-o-keyframes body-animate {
+    10% {
+        transform: scale(1, 0.002);
+    }
+
+    35% {
+        transform: scale(0.2, 0.002);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.2, 0.002);
+        opacity: 0;
+    }
+
+    85% {
+        transform: scale(1, 0.002);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes body-animate-center {
+    10% {
+        transform: scale(1, 0.002);
+    }
+
+    35% {
+        transform: scale(0.2, 0.002);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.2, 0.002);
+        opacity: 0;
+    }
+
+    85% {
+        transform: scale(1, 0.002);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes body-animation-right-to-left {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes countdown-modal {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//emoji animation
+@keyframes wow-face {
+    15%,
+    25% {
+        transform: rotate(20deg) translateX(-25px);
+    }
+    45%,
+    65% {
+        transform: rotate(-20deg) translateX(25px);
+    }
+    75%,
+    100% {
+        transform: rotate(0deg) translateX(0);
+    }
+}
+
+@keyframes wow-brow {
+    15%,
+    65% {
+        top: 25px;
+    }
+    75%,
+    100%,
+    0% {
+        top: 15px;
+    }
+}
+
+@keyframes wow-mouth {
+    10%,
+    30% {
+        width: 20px;
+        height: 20px;
+        left: calc(50% - 10px);
+    }
+    50%,
+    70% {
+        width: 30px;
+        height: 40px;
+        left: calc(50% - 15px);
+    }
+    75%,
+    100% {
+        height: 50px;
+    }
+}

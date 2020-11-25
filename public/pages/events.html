@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Vanilla ToDo task manager" />
+        <link rel="icon" href="./favicon.ico" />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../css/index.css" />
+        <script type="module" src="http://localhost:3000/js/eventspage.js" defer></script>
+
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Modak&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome CDN -->
+        <script src="https://kit.fontawesome.com/ee4f7cdaa4.js" crossorigin="anonymous"></script>
+        <!-- App script -->
+        <title>Entertainor</title>
+    </head>
+    <body>
+        <div class="eventspage">
+            <div class="header">
+                <div class="header__brand">
+                    <span>Entertainor</span>
+                </div>
+            </div>
+            <div class="eventspage__body body-style">
+                <div class="eventspage__container">
+                    <div class="eventspage__form">
+                        <input
+                            type="text"
+                            class="eventspage__form__search-input"
+                            id="add-task-input"
+                            placeholder="Search event"
+                        />
+                        <button class="eventspage__form__search-button">Search</button>
+                    </div>
+                    <div class="eventspage__events">
+                        <div class="eventspage__events__event-card">
+                            <div class="eventspage__events__event-card__cover">
+                                <div class="eventspage__events__event-card__cover__image"></div>
+                            </div>
+                            <div class="eventspage__events__event-card__info-section">
+                                <div class="eventspage__events__event-card__info-section__date">
+                                    <span class="eventspage__events__event-card__info-section__date-info__date">
+                                        Mon, APR 09, 7:00 PM
+                                    </span>
+                                </div>
+                                <div class="eventspage__events__event-card__info-section__description">
+                                    This Thing Called Life: A Celebration of Prince
+                                </div>
+                                <div class="eventspage__events__event-card__info-section__loc-and-price card-bottom">
+                                    <span class="eventspage__events__event-card__info-section__loc-and-price__loc">
+                                        Mezzanine, San Francisco, CA
+                                    </span>
+                                    <span class="eventspage__events__event-card__info-section__loc-and-price__price">
+                                        Free – $30
+                                    </span>
+                                </div>
+                                <div class="eventspage__events__event-card__info-section__hover-section card-bottom">
+                                    <span class="eventspage__events__event-card__info-section__hover-section__hashtags">
+                                        #Music #Party
+                                    </span>
+                                    <button
+                                        class="eventspage__events__event-card__info-section__hover-section__get-ticket"
+                                        id="get-ticket"
+                                    >
+                                        Get ticket!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventspage__countdown-modal-overlay">
+                        <div class="eventspage__countdown-modal">
+                            <div class="eventspage__countdown-modal__warnings">
+                                <div class="eventspage__countdown-modal__warnings--large">Hurry Up!</div>
+                                <div class="eventspage__countdown-modal__warnings--small">
+                                    Get it before the tickets run out!
+                                </div>
+                            </div>
+                            <div class="eventspage__countdown-modal__countdown">
+                                <div id="day">na</div>
+                                <div id="hour">na</div>
+                                <div id="minute">na</div>
+                                <div id="second">na</div>
+                            </div>
+                            <div class="eventspage__countdown-modal__btn">
+                                <button class="eventspage__countdown-modal__btn__buy-ticket">Buy!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+.eventspage__events__event-card {
+    @include flex($jc: center);
+    border-radius: pxToRem(2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    height: pxToRem(125px);
+    // margin-bottom: pxToRem(25px);
+    margin: pxToRem(25px) auto;
+    width: pxToRem(650px);
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover &__info-section__loc-and-price {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    &:hover &__info-section__hover-section {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+
+    &__cover {
+        background: none;
+        height: 100%;
+        width: 35%;
+        position: relative;
+
+        &__image {
+            background-image: url('https://s9.postimg.cc/y0sfm95gv/prince_f.jpg');
+            background-position: center center;
+            background-size: cover;
+            height: 100%;
+        }
+    }
+
+    &__info-section {
+        @include flex($fdr: column);
+        background-color: $color-white;
+        height: 100%;
+        padding: pxToRem(12px) pxToRem(15px);
+        position: relative;
+        width: 65%;
+
+        &__date,
+        &__loc-and-price,
+        &__hover-section {
+            font-size: pxToRem(14px);
+            color: $color-dark-gray;
+        }
+
+        &__description {
+            margin-top: pxToRem(10px);
+        }
+
+        &__hover-section {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 300ms ease-out;
+
+            &__get-ticket {
+                @include button-generator(
+                    $size: 5px,
+                    $color: $color-white,
+                    $bg-color: $color-purple,
+                    $hover-bg-color: $color-purple-dark
+                );
+            }
+        }
+
+        .card-bottom {
+            @include flex($jc: space-between);
+            padding: pxToRem(12px);
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            transition: all 300ms ease-out;
+            width: 100%;
+        }
+    }
+}

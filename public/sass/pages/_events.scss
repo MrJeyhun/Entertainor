@@ -1,0 +1,70 @@
+.eventspage {
+    font-family: 'Poppins', sans-serif;
+
+    &__body {
+        @include flex($jc: center);
+        animation: body-animation-right-to-left 2s ease;
+    }
+
+    &__container {
+        background-color: $color-clouds;
+        width: pxToRem(1000px);
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    &__form {
+        @include flex($jc: center, $ai: center);
+        margin-top: pxToRem(50px);
+        &__search-input {
+            padding-left: pxToRem(16px);
+            margin-top: pxToRem(1px);
+            height: pxToRem(40px);
+            width: pxToRem(240px);
+            // border-radius: 0;
+            margin-right: pxToRem(8px);
+            font-size: pxToRem(16px);
+            line-height: pxToRem(19px);
+            border: none;
+            ::placeholder {
+                color: #e4e6e8;
+            }
+            &:focus {
+                outline: 0;
+                @include shadow-generator($color-purple);
+            }
+        }
+
+        &__search-button {
+            @include button-generator(
+                $size: 12px,
+                $color: $color-white,
+                $bg-color: $color-purple,
+                $hover-bg-color: $color-purple-dark
+            );
+        }
+    }
+
+    &__events {
+        height: 100%;
+        margin-top: pxToRem(60px);
+        overflow-y: auto;
+        scrollbar-color: $color-purple $color-white;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            width: pxToRem(8px);
+            background-color: $color-white;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-purple;
+        }
+
+        &__sec1 {
+            height: pxToRem(50px);
+        }
+        &__sec2 {
+            height: pxToRem(25px);
+        }
+    }
+}

@@ -1,7 +1,21 @@
+//reset css
+@import './abstracts/reset';
+
+//abstracts
 @import './abstracts/functions';
 @import './abstracts/mixins';
 @import './abstracts/variables';
+@import './abstracts/animations';
 
-body {
-    background-color: aqua;
-} 
+//shared
+@import './shared/shared';
+
+//components
+@import './components/header';
+@import './components/emoji';
+@import './components/eventcard';
+@import './components/countdown-modal';
+
+//pages
+@import './pages/home';
+@import './pages/events';
