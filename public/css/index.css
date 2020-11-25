@@ -278,55 +278,49 @@ img {
       content: ''; }
   .emoji__face {
     width: inherit;
-    height: inherit; }
-
-.emoji--wow:after {
-  content: ''; }
-
-.emoji--wow .emoji__face {
-  animation: wow-face 3s linear infinite; }
-
-.emoji--wow .emoji__eyebrows {
-  left: calc(50% - 3px);
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
-  animation: wow-brow 3s linear infinite; }
-  .emoji--wow .emoji__eyebrows:before, .emoji--wow .emoji__eyebrows:after {
-    width: 24px;
-    height: 20px;
-    border: 6px solid #000;
-    box-sizing: border-box;
+    height: inherit;
+    animation: wow-face 3s linear infinite; }
+  .emoji__mouth {
+    width: 30px;
+    height: 45px;
+    left: calc(50% - 15px);
+    top: 50%;
     border-radius: 50%;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    top: -3px;
-    left: calc(50% - 12px); }
-  .emoji--wow .emoji__eyebrows:before {
-    margin-left: -25px; }
-  .emoji--wow .emoji__eyebrows:after {
-    margin-left: 25px; }
-
-.emoji--wow .emoji__eyes {
-  width: 16px;
-  height: 24px;
-  left: calc(50% - 8px);
-  top: 35px;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000; }
-
-.emoji--wow .emoji__mouth {
-  width: 30px;
-  height: 45px;
-  left: calc(50% - 15px);
-  top: 50%;
-  border-radius: 50%;
-  background: #000;
-  animation: wow-mouth 3s linear infinite; }
+    background: #000;
+    animation: wow-mouth 3s linear infinite; }
+  .emoji__eyes {
+    width: 16px;
+    height: 24px;
+    left: calc(50% - 8px);
+    top: 35px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000; }
+  .emoji__eyebrows {
+    left: calc(50% - 3px);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000;
+    animation: wow-brow 3s linear infinite; }
+    .emoji__eyebrows:before, .emoji__eyebrows:after {
+      width: 24px;
+      height: 20px;
+      border: 6px solid #000;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      top: -3px;
+      left: calc(50% - 12px); }
+    .emoji__eyebrows:before {
+      margin-left: -25px; }
+    .emoji__eyebrows:after {
+      margin-left: 25px; }
+  .emoji:after {
+    content: ''; }
 
 .homepage__body {
   width: 100%;
