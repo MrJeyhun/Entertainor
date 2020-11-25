@@ -205,6 +205,14 @@ img {
     opacity: 1;
     transform: translateX(0); } }
 
+@keyframes countdown-modal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 @keyframes wow-face {
   15%,
   25% {
@@ -418,6 +426,8 @@ img {
 
 .eventspage__countdown-modal-overlay {
   display: none;
+  justify-content: center;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -428,17 +438,89 @@ img {
 
 .eventspage__countdown-modal {
   display: none;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   border-top-right-radius: 0.875rem;
   border-top-left-radius: 0.875rem;
   background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)), url("../images/countdownbg.jpg");
   background-size: contain;
   width: 50rem;
   height: 85%;
-  z-index: 20; }
+  z-index: 20;
+  user-select: none;
+  animation: countdown-modal 1s ease; }
+  .eventspage__countdown-modal__warnings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 1 auto;
+    margin-top: 5rem; }
+    .eventspage__countdown-modal__warnings--large {
+      font-family: 'Modak', cursive;
+      font-size: 3.75rem;
+      letter-spacing: 0.0625rem;
+      color: #9b59b6; }
+    .eventspage__countdown-modal__warnings--small {
+      font-size: 1.25rem;
+      color: #9b59b6; }
+  .eventspage__countdown-modal__countdown {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 5rem; }
+    .eventspage__countdown-modal__countdown div {
+      position: relative;
+      width: 6.25rem;
+      height: 6.25rem;
+      line-height: 6.25rem;
+      text-align: center;
+      background: #9b59b6;
+      color: #fff;
+      margin: 0 0.9375rem;
+      font-size: 3rem;
+      font-weight: 500; }
+      .eventspage__countdown-modal__countdown div:before {
+        content: '';
+        position: absolute;
+        bottom: -1.875rem;
+        left: 0;
+        width: 100%;
+        height: 2.1875rem;
+        background: #ffce00;
+        color: #333;
+        font-size: 1rem;
+        line-height: 2.1875rem;
+        font-weight: 300; }
+    .eventspage__countdown-modal__countdown div#day:before {
+      content: 'Days'; }
+    .eventspage__countdown-modal__countdown div#hour:before {
+      content: 'Hours'; }
+    .eventspage__countdown-modal__countdown div#minute:before {
+      content: 'Minutes'; }
+    .eventspage__countdown-modal__countdown div#second:before {
+      content: 'Seconds'; }
+  .eventspage__countdown-modal__btn {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 2.5rem;
+    margin-top: 6.25rem; }
+    .eventspage__countdown-modal__btn__buy-ticket {
+      padding: 13px 25px;
+      color: #fff;
+      background-color: #9b59b6;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 0.1875rem;
+      outline: none;
+      user-select: none;
+      font-size: 1.25rem; }
+      .eventspage__countdown-modal__btn__buy-ticket:hover {
+        background-color: #8e44ad; }
 
 .homepage__body {
   color: #9b59b6;
