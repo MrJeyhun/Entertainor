@@ -1,0 +1,7 @@
+.eventspage {
+    font-family: 'Poppins', sans-serif;
+
+    &__body {
+        animation: body-animation-right-to-left 2s ease;
+    }
+}

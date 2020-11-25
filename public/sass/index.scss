@@ -7,9 +7,13 @@
 @import './abstracts/variables';
 @import './abstracts/animations';
 
+//shared
+@import './shared/shared';
+
 //components
 @import './components/header';
 @import './components/emoji';
 
 //pages
 @import './pages/home';
+@import './pages/events';
