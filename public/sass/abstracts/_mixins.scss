@@ -21,3 +21,20 @@
     -moz-box-shadow: pxToRem(1px) solid $color;
     border: pxToRem(1px) solid $color;
 }
+
+@mixin button-generator($size, $color, $bg-color, $hover-bg-color) {
+    // padding: pxToRem(8px) pxToRem(13px) pxToRem(8px) pxToRem(13px);
+    padding: $size;
+    color: $color;
+    background-color: $bg-color;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: pxToRem(3px);
+    outline: none;
+    user-select: none;
+
+    &:hover {
+        background-color: $hover-bg-color;
+    }
+}

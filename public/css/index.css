@@ -200,7 +200,7 @@ img {
 @keyframes body-animation-right-to-left {
   0% {
     opacity: 0;
-    transform: translateX(50px); }
+    transform: translateX(100px); }
   100% {
     opacity: 1;
     transform: translateX(0); } }
@@ -392,4 +392,137 @@ img {
 .eventspage {
   font-family: 'Poppins', sans-serif; }
   .eventspage__body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
     animation: body-animation-right-to-left 2s ease; }
+  .eventspage__container {
+    background-color: rgba(236, 240, 241, 0.9);
+    width: 62.5rem;
+    height: 100%;
+    overflow-y: hidden; }
+  .eventspage__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex: 0 1 auto;
+    margin-top: 3.125rem; }
+    .eventspage__form__search-input {
+      padding-left: 1rem;
+      margin-top: 0.0625rem;
+      height: 2.5rem;
+      width: 15rem;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.1875rem;
+      border: none; }
+      .eventspage__form__search-input ::placeholder {
+        color: #e4e6e8; }
+      .eventspage__form__search-input:focus {
+        outline: 0;
+        box-shadow: 0 0.25rem 1.25rem #9b59b6; }
+    .eventspage__form__search-button {
+      padding: 12px;
+      color: #fff;
+      background-color: #9b59b6;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 0.1875rem;
+      outline: none;
+      user-select: none; }
+      .eventspage__form__search-button:hover {
+        background-color: #8e44ad; }
+  .eventspage__events {
+    min-height: 0 !important;
+    height: 100%;
+    margin-top: 3.75rem;
+    overflow-y: auto;
+    scrollbar-color: #9b59b6 #fff;
+    scrollbar-width: thin; }
+    .eventspage__events::-webkit-scrollbar {
+      width: 0.5rem;
+      background-color: #fff; }
+    .eventspage__events::-webkit-scrollbar-thumb {
+      background-color: #9b59b6; }
+    .eventspage__events__sec1 {
+      height: 3.125rem; }
+    .eventspage__events__sec2 {
+      height: 1.5625rem; }
+    .eventspage__events__event-card {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row;
+      flex: 0 1 auto;
+      border-radius: 0.125rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      height: 7.8125rem;
+      margin: 1.5625rem auto;
+      width: 40.625rem;
+      transition: all 0.3s ease-out; }
+      .eventspage__events__event-card:hover {
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2); }
+      .eventspage__events__event-card:hover .eventspage__events__event-card__info-section__loc-and-price {
+        opacity: 0;
+        transform: translateY(-8px); }
+      .eventspage__events__event-card:hover .eventspage__events__event-card__info-section__hover-section {
+        opacity: 1;
+        transform: translateY(10px); }
+      .eventspage__events__event-card__cover {
+        background: none;
+        height: 100%;
+        width: 35%;
+        position: relative; }
+        .eventspage__events__event-card__cover__image {
+          background-image: url("https://s9.postimg.cc/y0sfm95gv/prince_f.jpg");
+          background-position: center center;
+          background-size: cover;
+          height: 100%; }
+      .eventspage__events__event-card__info-section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: column;
+        flex: 0 1 auto;
+        background-color: #fff;
+        height: 100%;
+        padding: 0.75rem 0.9375rem;
+        position: relative;
+        width: 65%; }
+        .eventspage__events__event-card__info-section__date, .eventspage__events__event-card__info-section__loc-and-price, .eventspage__events__event-card__info-section__hover-section {
+          font-size: 0.875rem;
+          color: #888; }
+        .eventspage__events__event-card__info-section__description {
+          margin-top: 0.625rem; }
+        .eventspage__events__event-card__info-section__hover-section {
+          opacity: 0;
+          transform: translateY(16px);
+          transition: all 300ms ease-out; }
+          .eventspage__events__event-card__info-section__hover-section__get-ticket {
+            padding: 5px;
+            color: #fff;
+            background-color: #9b59b6;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 0.1875rem;
+            outline: none;
+            user-select: none; }
+            .eventspage__events__event-card__info-section__hover-section__get-ticket:hover {
+              background-color: #8e44ad; }
+        .eventspage__events__event-card__info-section .card-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: stretch;
+          flex-direction: row;
+          flex: 0 1 auto;
+          padding: 0.75rem;
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          transition: all 300ms ease-out;
+          width: 100%; }
