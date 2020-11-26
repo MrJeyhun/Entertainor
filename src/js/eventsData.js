@@ -1,7 +1,7 @@
 export let eventsData = [
     {
         id: 'post1',
-        date: 'Mon, APR 09, 7:00 PM',
+        date: 'January 12, 2021 13:00:00',
         description: 'This Thing Called Life: A Celebration of Prince',
         location: 'Mezzaine, San Francisco, CA',
         price: '30',
@@ -10,7 +10,7 @@ export let eventsData = [
     },
     {
         id: 'post2',
-        date: 'Tue, APR 10, 7:00 PM',
+        date: 'January 08, 2021 15:00:00',
         description: 'Best concert ever! Awesome night!',
         location: 'Flarmonia Street, CA',
         price: '25',

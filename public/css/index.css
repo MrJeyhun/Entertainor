@@ -205,13 +205,21 @@ img {
     opacity: 1;
     transform: translateX(0); } }
 
-@keyframes countdown-modal {
+@keyframes countdown-modal-open {
   0% {
     opacity: 0;
     transform: translateY(100px); }
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+@keyframes countdown-modal-close {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(100px); } }
 
 @keyframes wow-face {
   15%,
@@ -445,7 +453,21 @@ img {
   height: 85%;
   z-index: 20;
   user-select: none;
-  animation: countdown-modal 1s ease; }
+  animation: countdown-modal-open 2s ease; }
+  .eventspage__countdown-modal__close {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    font-size: 3rem;
+    color: #9b59b6;
+    margin-top: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s ease; }
+    .eventspage__countdown-modal__close:hover {
+      color: #8e44ad;
+      transform: translateY(5px); }
   .eventspage__countdown-modal__warnings {
     display: flex;
     justify-content: center;
