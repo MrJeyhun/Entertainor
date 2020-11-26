@@ -1,6 +1,22 @@
 .eventspage {
     font-family: 'Poppins', sans-serif;
 
+    &__add-event {
+        @include button-generator(
+            $size: 2px 0,
+            $color: $color-white,
+            $bg-color: $color-purple,
+            $hover-bg-color: $color-purple-dark
+        );
+        border-radius: 0;
+        font-size: 12px;
+        font-weight: bold;
+
+        div {
+            transform: rotate(90deg);
+        }
+    }
+
     &__body {
         @include flex($jc: center);
         animation: body-animation-right-to-left 2s ease;

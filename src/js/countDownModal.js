@@ -3,12 +3,13 @@ const modalOverlay = document.querySelector('.eventspage__countdown-modal-overla
 const modalCountdown = document.querySelector('.eventspage__countdown-modal');
 const closeCountDownModalBtn = document.querySelector('.eventspage__countdown-modal__close');
 
+let interval;
 export const openCountDownModal = (eventId) => {
     eventsData.map((event) => {
         if (eventId == event.id) {
-            setInterval(() => {
+            interval = setInterval(() => {
                 setCountDown(event.date);
-            }, 1000);
+            }, 1000);   
         }
     })
 
@@ -22,11 +23,12 @@ export const openCountDownModal = (eventId) => {
 
 const closeCountDownModal = () => {
     modalCountdown.style.animation = 'countdown-modal-close .8s ease';
+    clearInterval(interval);
 
     setTimeout(() => {
         modalOverlay.style.display = 'none';
         modalCountdown.style.display = 'none';
-    }, 800);    
+    }, 600);    
 }
 
 closeCountDownModalBtn.addEventListener('click', closeCountDownModal);

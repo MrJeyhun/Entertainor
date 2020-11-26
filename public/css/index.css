@@ -593,6 +593,23 @@ img {
 
 .eventspage {
   font-family: 'Poppins', sans-serif; }
+  .eventspage__add-event {
+    padding: 2px 0;
+    color: #fff;
+    background-color: #9b59b6;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.1875rem;
+    outline: none;
+    user-select: none;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: bold; }
+    .eventspage__add-event:hover {
+      background-color: #8e44ad; }
+    .eventspage__add-event div {
+      transform: rotate(90deg); }
   .eventspage__body {
     display: flex;
     justify-content: center;
