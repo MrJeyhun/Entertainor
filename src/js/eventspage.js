@@ -1,3 +1,5 @@
+const eventsContainer = document.querySelector('.eventspage__events');
+
 document.getElementById('get-ticket').addEventListener('click', () => {
     let modalOverlay = document.querySelector('.eventspage__countdown-modal-overlay');
     let modalCountdown = document.querySelector('.eventspage__countdown-modal');
