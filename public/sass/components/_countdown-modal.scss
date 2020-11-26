@@ -23,7 +23,21 @@
         height: 85%;
         z-index: 20;
         user-select: none;
-        animation: countdown-modal 1s ease;
+        animation: countdown-modal-open 2s ease;
+
+        &__close {
+            @include flex($jc: center);
+            font-size: pxToRem(48px);
+            color: $color-purple;
+            margin-top: pxToRem(15px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $color-purple-dark;
+                transform: translateY(5px);
+            }
+        }
 
         &__warnings {
             @include flex($jc: center, $ai: center, $fdr: column);
