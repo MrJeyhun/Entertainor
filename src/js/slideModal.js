@@ -1,10 +1,11 @@
 import {eventsData} from './eventsData.js';
-const modalOverlay = document.querySelector('.eventspage__countdown-modal-overlay');
-const modalCountdown = document.querySelector('.eventspage__countdown-modal');
-const closeCountDownModalBtn = document.querySelector('.eventspage__countdown-modal__close');
+const modals = document.querySelectorAll('.eventspage__modal');
+const countDownModalOverlay = document.querySelector('.eventspage__countdown-modal-overlay');
+const addEventModalOverlay = document.querySelector('.eventspage__add-event-modal-overlay');
+const closeSlideModalBtns = document.querySelectorAll('.eventspage__modal__close');
 
 let interval;
-export const openCountDownModal = (eventId) => {
+export const openSlideModal = (selectedModal, eventId = null) => {
     eventsData.map((event) => {
         if (eventId == event.id) {
             interval = setInterval(() => {
@@ -14,24 +15,30 @@ export const openCountDownModal = (eventId) => {
     })
 
     setTimeout(() => {
-        modalCountdown.style.animation = 'countdown-modal-open 2s ease';
-        modalOverlay.style.display = 'flex';
-        modalCountdown.style.display = 'block';
+        for (const modal of modals) {
+            modal.style.animation = 'modal-open .8s ease';
+        }
+        selectedModal.style.display = 'flex';
     }, 500)
-    
 }
 
-const closeCountDownModal = () => {
-    modalCountdown.style.animation = 'countdown-modal-close .8s ease';
+const closeSlideModal = () => {
+    console.log('closing...')
+    for (const modal of modals) {
+        modal.style.animation = 'modal-close .7s ease';
+    }
     clearInterval(interval);
 
     setTimeout(() => {
-        modalOverlay.style.display = 'none';
-        modalCountdown.style.display = 'none';
+        countDownModalOverlay.style.display = 'none';
+        addEventModalOverlay.style.display = 'none';
     }, 600);    
 }
 
-closeCountDownModalBtn.addEventListener('click', closeCountDownModal);
+for (const closeSlideModalBtn of closeSlideModalBtns) {
+    closeSlideModalBtn.addEventListener('click', closeSlideModal);
+}
+
 
 //countdown logic
 const setCountDown = (eventDate) => {

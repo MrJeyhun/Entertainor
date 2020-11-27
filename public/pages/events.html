@@ -7,6 +7,7 @@
         <link rel="icon" href="./favicon.ico" />
         <!-- Stylesheet -->
         <link rel="stylesheet" href="../css/index.css" />
+        <!-- App script -->
         <script type="module" src="http://localhost:3000/js/eventspage.js" defer></script>
 
         <!--Google Fonts-->
@@ -15,9 +16,6 @@
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Modak&display=swap"
             rel="stylesheet"
         />
-        <!-- Font Awesome CDN -->
-        <script src="https://kit.fontawesome.com/ee4f7cdaa4.js" crossorigin="anonymous"></script>
-        <!-- App script -->
         <title>Entertainor</title>
     </head>
     <body>
@@ -40,23 +38,26 @@
                         <button class="eventspage__form__search-button">Search</button>
                     </div>
                     <div class="eventspage__events"></div>
+                    <div class="eventspage__add-event-modal-overlay">
+                        <div class="eventspage__modal">
+                            <span class="eventspage__modal__close">&dArr;</span>
+                        </div>
+                    </div>
                     <div class="eventspage__countdown-modal-overlay">
-                        <div class="eventspage__countdown-modal">
-                            <span class="eventspage__countdown-modal__close">&dArr;</span>
-                            <div class="eventspage__countdown-modal__warnings">
-                                <div class="eventspage__countdown-modal__warnings--large">Hurry Up!</div>
-                                <div class="eventspage__countdown-modal__warnings--small">
-                                    Get it before the tickets run out!
-                                </div>
+                        <div class="eventspage__modal">
+                            <span class="eventspage__modal__close">&dArr;</span>
+                            <div class="eventspage__modal__warnings">
+                                <div class="eventspage__modal__warnings--large">Hurry Up!</div>
+                                <div class="eventspage__modal__warnings--small">Get it before the tickets run out!</div>
                             </div>
-                            <div class="eventspage__countdown-modal__countdown">
+                            <div class="eventspage__modal__countdown">
                                 <div id="day">na</div>
                                 <div id="hour">na</div>
                                 <div id="minute">na</div>
                                 <div id="second">na</div>
                             </div>
-                            <div class="eventspage__countdown-modal__btn">
-                                <button class="eventspage__countdown-modal__btn__buy-ticket">Buy!</button>
+                            <div class="eventspage__modal__btn">
+                                <button class="eventspage__modal__btn__buy-ticket">Buy!</button>
                             </div>
                         </div>
                     </div>
