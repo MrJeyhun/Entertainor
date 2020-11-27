@@ -1,6 +1,7 @@
 import {eventsData} from './eventsData.js';
-import {openCountDownModal} from './countDownModal.js';
+import {openSlideModal} from './slideModal.js';
 
+const countDownModalOverlay = document.querySelector('.eventspage__countdown-modal-overlay');
 const eventsContainer = document.querySelector('.eventspage__events');
 
 export const renderEvents = () => {
@@ -77,10 +78,12 @@ export const renderEvents = () => {
 
     const btnsOfEventCards = document.querySelectorAll('.eventspage__events__event-card__info-section__hover-section__get-ticket');
 
-    for (const btn of btnsOfEventCards) {
-        btn.addEventListener("click", (event) => {
-            openCountDownModal(event.target.id);
-        })
-    }
+    if (btnsOfEventCards.length != 0 ) {
+        for (const btn of btnsOfEventCards) {
+            btn.addEventListener("click", (event) => {
+                openSlideModal(countDownModalOverlay, event.target.id);
+            })
+        }
+    }  
 }
 

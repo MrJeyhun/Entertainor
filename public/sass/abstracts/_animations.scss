@@ -111,7 +111,7 @@
     }
 }
 
-@keyframes countdown-modal-open {
+@keyframes modal-open {
     0% {
         opacity: 0;
         transform: translateY(100px);
@@ -123,7 +123,7 @@
     }
 }
 
-@keyframes countdown-modal-close {
+@keyframes modal-close {
     0% {
         opacity: 1;
         transform: translateY(0);

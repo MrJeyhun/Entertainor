@@ -205,7 +205,7 @@ img {
     opacity: 1;
     transform: translateX(0); } }
 
-@keyframes countdown-modal-open {
+@keyframes modal-open {
   0% {
     opacity: 0;
     transform: translateY(100px); }
@@ -213,7 +213,7 @@ img {
     opacity: 1;
     transform: translateY(0); } }
 
-@keyframes countdown-modal-close {
+@keyframes modal-close {
   0% {
     opacity: 1;
     transform: translateY(0); }
@@ -443,18 +443,18 @@ img {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10; }
 
-.eventspage__countdown-modal {
-  display: none;
-  border-top-right-radius: 0.875rem;
-  border-top-left-radius: 0.875rem;
+.eventspage__modal {
+  display: block;
   background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)), url("../images/countdownbg.jpg");
   background-size: contain;
   width: 50rem;
   height: 85%;
   z-index: 20;
   user-select: none;
-  animation: countdown-modal-open 2s ease; }
-  .eventspage__countdown-modal__close {
+  border-top-right-radius: 0.875rem;
+  border-top-left-radius: 0.875rem;
+  animation: modal-open 2s ease; }
+  .eventspage__modal__close {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -465,32 +465,32 @@ img {
     margin-top: 0.9375rem;
     cursor: pointer;
     transition: all 0.3s ease; }
-    .eventspage__countdown-modal__close:hover {
+    .eventspage__modal__close:hover {
       color: #8e44ad;
       transform: translateY(5px); }
-  .eventspage__countdown-modal__warnings {
+  .eventspage__modal__warnings {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex: 0 1 auto;
     margin-top: 5rem; }
-    .eventspage__countdown-modal__warnings--large {
+    .eventspage__modal__warnings--large {
       font-family: 'Modak', cursive;
       font-size: 3.75rem;
       letter-spacing: 0.0625rem;
       color: #9b59b6; }
-    .eventspage__countdown-modal__warnings--small {
+    .eventspage__modal__warnings--small {
       font-size: 1.25rem;
       color: #9b59b6; }
-  .eventspage__countdown-modal__countdown {
+  .eventspage__modal__countdown {
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-direction: row;
     flex: 0 1 auto;
     margin-top: 5rem; }
-    .eventspage__countdown-modal__countdown div {
+    .eventspage__modal__countdown div {
       position: relative;
       width: 6.25rem;
       height: 6.25rem;
@@ -501,7 +501,7 @@ img {
       margin: 0 0.9375rem;
       font-size: 3rem;
       font-weight: 500; }
-      .eventspage__countdown-modal__countdown div:before {
+      .eventspage__modal__countdown div:before {
         content: '';
         position: absolute;
         bottom: -1.875rem;
@@ -513,15 +513,15 @@ img {
         font-size: 1rem;
         line-height: 2.1875rem;
         font-weight: 300; }
-    .eventspage__countdown-modal__countdown div#day:before {
+    .eventspage__modal__countdown div#day:before {
       content: 'Days'; }
-    .eventspage__countdown-modal__countdown div#hour:before {
+    .eventspage__modal__countdown div#hour:before {
       content: 'Hours'; }
-    .eventspage__countdown-modal__countdown div#minute:before {
+    .eventspage__modal__countdown div#minute:before {
       content: 'Minutes'; }
-    .eventspage__countdown-modal__countdown div#second:before {
+    .eventspage__modal__countdown div#second:before {
       content: 'Seconds'; }
-  .eventspage__countdown-modal__btn {
+  .eventspage__modal__btn {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -529,7 +529,7 @@ img {
     flex: 0 1 auto;
     margin-top: 2.5rem;
     margin-top: 6.25rem; }
-    .eventspage__countdown-modal__btn__buy-ticket {
+    .eventspage__modal__btn__buy-ticket {
       padding: 13px 25px;
       color: #fff;
       background-color: #9b59b6;
@@ -540,8 +540,46 @@ img {
       outline: none;
       user-select: none;
       font-size: 1.25rem; }
-      .eventspage__countdown-modal__btn__buy-ticket:hover {
+      .eventspage__modal__btn__buy-ticket:hover {
         background-color: #8e44ad; }
+
+.eventspage__add-event-modal-overlay {
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+
+.eventspage__add-event-modal {
+  display: block;
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(245, 247, 250, 0.73)), url("../images/countdownbg.jpg");
+  background-size: contain;
+  width: 50rem;
+  height: 85%;
+  z-index: 20;
+  user-select: none;
+  border-top-right-radius: 0.875rem;
+  border-top-left-radius: 0.875rem;
+  animation: modal-open 2s ease; }
+  .eventspage__add-event-modal__close {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex: 0 1 auto;
+    font-size: 3rem;
+    color: #9b59b6;
+    margin-top: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.3s ease; }
+    .eventspage__add-event-modal__close:hover {
+      color: #8e44ad;
+      transform: translateY(5px); }
 
 .homepage__body {
   color: #9b59b6;
@@ -593,6 +631,23 @@ img {
 
 .eventspage {
   font-family: 'Poppins', sans-serif; }
+  .eventspage__add-event {
+    padding: 2px 0;
+    color: #fff;
+    background-color: #9b59b6;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.1875rem;
+    outline: none;
+    user-select: none;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: bold; }
+    .eventspage__add-event:hover {
+      background-color: #8e44ad; }
+    .eventspage__add-event div {
+      transform: rotate(90deg); }
   .eventspage__body {
     display: flex;
     justify-content: center;
