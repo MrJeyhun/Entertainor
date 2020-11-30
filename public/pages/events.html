@@ -38,26 +38,104 @@
                         <button class="eventspage__form__search-button">Search</button>
                     </div>
                     <div class="eventspage__events"></div>
-                    <div class="eventspage__add-event-modal-overlay">
-                        <div class="eventspage__modal">
-                            <span class="eventspage__modal__close">&dArr;</span>
+                    <div class="add-event-modal-overlay">
+                        <div class="modal add-event__modal-form">
+                            <span class="modal__close">&dArr;</span>
+                            <div class="modal__warnings--large">Create new event</div>
+                            <div class="add-event-modal__form-container">
+                                <div class="add-event-modal__form-field">
+                                    <div class="add-event-modal__form-field__form">
+                                        <input
+                                            type="text"
+                                            required
+                                            class="eventspage__form__search-input"
+                                            id="location"
+                                            placeholder="Location"
+                                        />
+                                    </div>
+                                    <div class="add-event-modal__form-field__form">
+                                        <input
+                                            type="number"
+                                            required
+                                            class="eventspage__form__search-input"
+                                            id="price"
+                                            placeholder="Price"
+                                        />                         
+                                    </div>
+                                </div>
+                                <div class="add-event-modal__form-field">
+                                    <div class="add-event-modal__form-field__form">
+                                        <input
+                                            type="date"
+                                            required
+                                            class="eventspage__form__search-input"
+                                            id="date"
+                                            placeholder="Date"
+                                        />
+                                    </div>
+                                    <div class="eventspage__add-event-modal__form-field__form">
+                                        <input
+                                            type="time"
+                                            required
+                                            class="eventspage__form__search-input"
+                                            id="time"
+                                            placeholder="Time"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="add-event-modal__form-field">
+                                    <div class="add-event-modal__form-field__form">
+                                        <textarea
+                                            required
+                                            id="description"
+                                            class="eventspage__form__search-input"
+                                            placeholder="Description"
+                                        ></textarea>
+                                    </div>
+                                    <div class="add-event-modal__form-field__form">
+                                        <input
+                                            type="text"
+                                            required
+                                            class="eventspage__form__search-input"
+                                            id="hashtags"
+                                            placeholder="Hashtags"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="add-event-modal__form-field">
+                                    <div class="add-event-modal__form-field__drop-area">
+                                        <span class="add-event-modal__form-field__drop-area__file-btn">
+                                            CHOOSE COVER
+                                        </span>
+                                        <span class="add-event-modal__form-field__drop-area__message">
+                                            or drag and drop here
+                                        </span>
+                                        <input type="file" required class="add-event-modal__form-field__drop-area__file-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal__btn add-event-modal__create-btn">
+                                <button class="modal__btn__buy-ticket">Create</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="eventspage__countdown-modal-overlay">
-                        <div class="eventspage__modal">
-                            <span class="eventspage__modal__close">&dArr;</span>
-                            <div class="eventspage__modal__warnings">
-                                <div class="eventspage__modal__warnings--large">Hurry Up!</div>
-                                <div class="eventspage__modal__warnings--small">Get it before the tickets run out!</div>
+                    <div class="countdown-modal-overlay">
+                        <div class="modal">
+                            <span class="modal__close">&dArr;</span>
+                            <div class="modal__warnings">
+                                <div class="modal__warnings--large">Hurry Up!</div>
+                                <div class="modal__warnings--small">Get it before the tickets run out!</div>
                             </div>
-                            <div class="eventspage__modal__countdown">
+                            <div class="modal__countdown">
                                 <div id="day">na</div>
                                 <div id="hour">na</div>
                                 <div id="minute">na</div>
                                 <div id="second">na</div>
                             </div>
-                            <div class="eventspage__modal__btn">
-                                <button class="eventspage__modal__btn__buy-ticket">Buy!</button>
+                            <div class="modal__btn">
+                                <button class="modal__btn__buy-ticket">Buy!</button>
                             </div>
                         </div>
                     </div>
