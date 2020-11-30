@@ -41,7 +41,7 @@
             margin-right: pxToRem(8px);
             font-size: pxToRem(16px);
             line-height: pxToRem(19px);
-            border: none;
+            border: 1px solid $color-purple;
             ::placeholder {
                 color: #e4e6e8;
             }

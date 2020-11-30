@@ -1,104 +1,216 @@
-.eventspage {
-    &__countdown-modal-overlay {
-        @include modal-overlay-generator;
+.add-event-modal-overlay {
+    @include modal-overlay-generator;
+}
+
+.countdown-modal-overlay {
+    @include modal-overlay-generator;
+}
+
+.modal {
+    @include modal-generator;
+    @include flex($ai: center, $fdr: column);
+
+    &__warnings {
+        @include flex($jc: center, $ai: center, $fdr: column);
+        margin-top: pxToRem(80px);
+
+        &--large {
+            font-family: 'Modak', cursive;
+            font-size: pxToRem(60px);
+            letter-spacing: pxToRem(1px);
+            color: $color-purple;
+        }
+        &--small {
+            font-size: pxToRem(20px);
+            color: $color-purple;
+        }
     }
 
-    &__modal {
-        @include modal-generator;
+    &__countdown {
+        @include flex($jc: center);
+        margin-top: pxToRem(80px);
 
-        &__warnings {
-            @include flex($jc: center, $ai: center, $fdr: column);
-            margin-top: pxToRem(80px);
+        div {
+            position: relative;
+            width: pxToRem(100px);
+            height: pxToRem(100px);
+            line-height: pxToRem(100px);
+            text-align: center;
+            background: $color-purple;
+            color: $color-white;
+            margin: 0 pxToRem(15px);
+            font-size: pxToRem(48px);
+            font-weight: 500;
 
-            &--large {
-                font-family: 'Modak', cursive;
-                font-size: pxToRem(60px);
-                letter-spacing: pxToRem(1px);
-                color: $color-purple;
-            }
-            &--small {
-                font-size: pxToRem(20px);
-                color: $color-purple;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: pxToRem(-30px);
+                left: 0;
+                width: 100%;
+                height: pxToRem(35px);
+                background: $countdown-footer-bg-color;
+                color: $countdown-footer-color;
+                font-size: pxToRem(16px);
+                line-height: pxToRem(35px);
+                font-weight: 300;
             }
         }
 
-        &__countdown {
-            @include flex($jc: center);
-            margin-top: pxToRem(80px);
+        div#day {
+            &:before {
+                content: 'Days';
+            }
+        }
 
-            div {
-                position: relative;
-                width: pxToRem(100px);
-                height: pxToRem(100px);
-                line-height: pxToRem(100px);
-                text-align: center;
-                background: $color-purple;
+        div#hour {
+            &:before {
+                content: 'Hours';
+            }
+        }
+
+        div#minute {
+            &:before {
+                content: 'Minutes';
+            }
+        }
+
+        div#second {
+            &:before {
+                content: 'Seconds';
+            }
+        }
+    }
+
+    &__btn {
+        @include flex($jc: center);
+        margin-top: pxToRem(40px);
+        &__buy-ticket {
+            @include button-generator(
+                $size: 13px 25px,
+                $color: $color-white,
+                $bg-color: $color-purple,
+                $hover-bg-color: $color-purple-dark
+            );
+            font-size: pxToRem(20px);
+        }
+        margin-top: pxToRem(100px);
+    }
+}
+
+.add-event-modal {
+    @include modal-generator;
+    @include flex($jc: center, $ai: flex-end);
+
+    &__form-container {
+        @include flex($jc: space-evenly, $fdr: column);
+        width: 80%;
+        height: 55%;
+        margin: pxToRem(30px) 0;
+        // border: 1px solid red;
+    }
+
+    &__form-field {
+        @include flex($jc: space-evenly, $ai: center);
+        padding: pxToRem(15px) 0;
+
+        &__form {
+            @include flex($fdr: column);
+
+            &__input {
+                width: pxToRem(180px);
+                height: pxToRem(30px);
+                // width: 100%;
+                padding: pxToRem(10px) 0;
+                font-size: pxToRem(16px);
+                color: $color-purple;
+                margin-bottom: pxToRem(10px);
+                border: none;
+                border-bottom: 1px solid $color-purple-dark;
+                outline: none;
+                background: transparent;
+
+                &:focus {
+                    animation: add-event-input 1s ease;
+
+                    .add-event-modal__form-field__form__label {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &__label {
+                font-size: pxToRem(12px);
+                // color: $color-white;
+                // color: $color-purple;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                // opacity: 0;
+                // top: 0;
+            }
+
+            &__input:focus ~ &__label,
+            &__input:valid ~ &__label {
+                top: pxToRem(-20px);
+                left: 0;
+                color: $color-purple-dark;
+            }
+        }
+
+        &__drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: pxToRem(490px);
+            max-width: 100%;
+            padding: pxToRem(25px);
+            border: pxToRem(1px) dashed $color-purple;
+            border-radius: pxToRem(3px);
+            transition: 0.2s;
+
+            &__file-btn {
+                flex-shrink: 0;
                 color: $color-white;
-                margin: 0 pxToRem(15px);
-                font-size: pxToRem(48px);
-                font-weight: 500;
+                background-color: $color-purple;
+                border: 1px solid $color-purple-dark;
+                border-radius: 3px;
+                padding: 8px 15px;
+                margin-right: 10px;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    bottom: pxToRem(-30px);
-                    left: 0;
-                    width: 100%;
-                    height: pxToRem(35px);
-                    background: $countdown-footer-bg-color;
-                    color: $countdown-footer-color;
-                    font-size: pxToRem(16px);
-                    line-height: pxToRem(35px);
-                    font-weight: 300;
+            &__file-input {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+                opacity: 0;
+                &:focus {
+                    outline: none;
                 }
             }
 
-            div#day {
-                &:before {
-                    content: 'Days';
-                }
+            .active {
+                background-color: red;
+                // background-color: rgba(255, 255, 255, 0.05);
             }
 
-            div#hour {
-                &:before {
-                    content: 'Hours';
-                }
+            &__message {
+                color: $color-purple;
+                font-size: small;
+                font-weight: 300;
+                line-height: 1.4;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
-
-            div#minute {
-                &:before {
-                    content: 'Minutes';
-                }
-            }
-
-            div#second {
-                &:before {
-                    content: 'Seconds';
-                }
-            }
-        }
-
-        &__btn {
-            @include flex($jc: center);
-            margin-top: pxToRem(40px);
-            &__buy-ticket {
-                @include button-generator(
-                    $size: 13px 25px,
-                    $color: $color-white,
-                    $bg-color: $color-purple,
-                    $hover-bg-color: $color-purple-dark
-                );
-                font-size: pxToRem(20px);
-            }
-            margin-top: pxToRem(100px);
         }
     }
 
-    &__add-event-modal-overlay {
-        @include modal-overlay-generator;
-    }
-
-    &__add-event-modal {
-        @include modal-generator;
+    &__create-btn {
+        margin-top: 0;
     }
 }
