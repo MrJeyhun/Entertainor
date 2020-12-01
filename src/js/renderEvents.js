@@ -2,12 +2,12 @@ import { eventsData } from './eventsData.js';
 import { openSlideModal } from './slideModal.js';
 
 const countDownModalOverlay = document.querySelector('.countdown-modal-overlay');
-const eventsContainer = document.querySelector('.eventspage__events');
+const prevEventsWrapper = document.querySelector('.eventspage__events');
 
 export const renderEvents = () => {
     eventsData.map(event => {
-        console.log('rendering...');
         //ah react, react...
+
         const eventCard = document.createElement('div');
         eventCard.className = 'eventspage__events__event-card';
 
@@ -24,7 +24,7 @@ export const renderEvents = () => {
         eventCardInfo_dateContainer.className = 'eventspage__events__event-card__info-section__date';
 
         const eventCardInfo_dateContainer_date = document.createElement('span');
-        eventCardInfo_dateContainer_date.textContent = `${event.date.slice(0, event.date.length - 3)}`;
+        eventCardInfo_dateContainer_date.textContent = `${event.date}`;
 
         const eventCardInfo_description = document.createElement('div');
         eventCardInfo_description.className = 'eventspage__events__event-card__info-section__description';
@@ -57,7 +57,7 @@ export const renderEvents = () => {
         eventCardInfo_hoversec_getTicket.textContent = 'Get ticket!';
 
         //composing of elements
-        eventsContainer.appendChild(eventCard);
+        prevEventsWrapper.appendChild(eventCard);
 
         eventCard.appendChild(eventCardCover);
         eventCard.appendChild(eventCardInfo);
@@ -77,6 +77,7 @@ export const renderEvents = () => {
 
         eventCardInfo_hoversec.appendChild(eventCardInfo_hoversec_hashtags);
         eventCardInfo_hoversec.appendChild(eventCardInfo_hoversec_getTicket);
+        console.log('rendering...');
     });
 
     const btnsOfEventCards = document.querySelectorAll(

@@ -22,7 +22,7 @@ export const openSlideModal = (selectedModal, eventId = null) => {
     }, 500);
 };
 
-const closeSlideModal = () => {
+export const closeSlideModal = () => {
     console.log('closing...');
     for (const modal of modals) {
         modal.style.animation = 'modal-close .7s ease';
