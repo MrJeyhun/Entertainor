@@ -1,13 +1,13 @@
 import { renderEvents } from './renderEvents.js';
 import { openSlideModal } from './slideModal.js';
-import { fileInput, checkActive, fileInputMessage } from './addEvent.js';
+import { fileInput, checkActive, fileInputMessage } from './createEvent.js';
 
 const addEventBtn = document.querySelector('.eventspage__add-event');
 const addEventModalOverlay = document.querySelector('.add-event-modal-overlay');
 
-addEventBtn.addEventListener('click', () => openSlideModal(addEventModalOverlay));
-
 renderEvents();
+
+addEventBtn.addEventListener('click', () => openSlideModal(addEventModalOverlay));
 
 //add event file(event cover) upload
 fileInput.addEventListener('dragenter', checkActive);
